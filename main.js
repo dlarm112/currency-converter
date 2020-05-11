@@ -8,8 +8,10 @@ vndRate = 23400;
 usdRate = 1;
 krwRate = 1222;
 
-let fromCap = from.toUpperCase();
-let toCap = to.toUpperCase();
+let fromTrim = from.trim();
+let toTrim = to.trim();
+let fromCap = fromTrim.toUpperCase();
+let toCap = toTrim.toUpperCase();
 
 function vndToUsd() {
     let result = amount / vndRate;
@@ -17,11 +19,11 @@ function vndToUsd() {
 }
 function usdToVnd() {
     let result = amount * vndRate;
-    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'VND' }).format(result)));
+    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'VND' }).format(result)));
 }
 function usdToKrw() {
     let result = amount * krwRate;
-    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'KRW' }).format(result)));
+    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'KRW' }).format(result)));
 }
 function krwToUsd() {
     let result = amount / krwRate;
@@ -29,11 +31,11 @@ function krwToUsd() {
 }
 function krwToVnd() {
     let result = (amount/krwRate) * vndRate;
-    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'VND' }).format(result)));
+    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'VND' }).format(result)));
 }
 function vndToKrw() {
     let result = (amount/vndRate) * krwRate;
-    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'KRW' }).format(result)));
+    console.log(fromCap, " to ", toCap, "is ", (new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'KRW' }).format(result)));
 }
 
 if (fromCap === "VND" && toCap === "USD"){
