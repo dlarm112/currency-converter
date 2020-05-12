@@ -101,6 +101,7 @@ function convert() {
     } else {
         resultArea.innerHTML = `ERROR`;
     }
+    return;
 }
 /*function usdToVnd() {
     
